@@ -31,12 +31,12 @@ Component Box, vai ser os divisores principais do Alurakut que vai fazer a separ
 
    ![image](https://user-images.githubusercontent.com/67201210/125687823-1e2c5ad6-5ea3-43b8-97c5-e88dd69cb197.png)
 
-2. Importamos o lib, onde está alguns dos nossos components que precisaremos usar em outras páginas da aplicação, juntamente com os respectivos estilos que estamos usando os styled-components para cuidar da camada de estilo da nossa aplicação, como por exemplo o menu da nossa aplicação.
+2. Importamos o lib, onde está alguns dos nossos components que precisaremos usar em outras páginas da aplicação, juntamente com os respectivos estilos que estamos usando os styled-components para cuidar da camada de estilo da nossa aplicação, como por exemplo o menu da aplicação.
 
    ![image](https://user-images.githubusercontent.com/67201210/125688729-82dc50b8-8772-4db0-b53b-ee1492c46f15.png)
    ![image](https://user-images.githubusercontent.com/67201210/125688642-c6c720cd-3cd3-48d3-9b8b-a2f658657f36.png)
   
-3. Após isso realizamos alguns ajustes no css da página Home do projeto utilizando propriedades do css grid-layout. Importamos os components e adicionamos também uma função para buscar a foto dos usuários adicionados na comunidade do Alurakut no GitHub. Logo após isso adicionamos uma sessão na Home, onde o JavaScript vai fazer um Map desses usuários, e retornando para o usuário final.
+3. Após isso realizamos alguns ajustes no css da página Home do projeto utilizando propriedades do css grid-layout. Importamos os components e adicionamos também uma função para buscar a foto dos usuários adicionados na comunidade do Alurakut no GitHub. Logo após isso adicionamos uma sessão na Home, onde o JavaScript vai fazer um Map desses usuários, e retorna para o usuário final.
 
    ![image](https://user-images.githubusercontent.com/67201210/125690473-78a826df-2396-4ae2-8582-e65838cb3491.png)
    ![image](https://user-images.githubusercontent.com/67201210/125690521-cdd71bb9-3b65-4563-b541-f2f22ca1035d.png)

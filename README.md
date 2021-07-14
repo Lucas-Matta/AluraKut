@@ -10,5 +10,6 @@ O Alurakut é um aplicativo desenvolvido na semana da Imersão React 3A edição
 
 * React
 * Styled Components
+* JavaScript
 
 ***

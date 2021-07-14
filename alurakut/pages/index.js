@@ -1,38 +1,35 @@
-import styled from 'styled-components'
+import MainGrid from '../src/components/MainGrid';
+import Box from '../src/components/Box';
 
-const Box = styled.div`
-    background: #FFF;
-    border-radius: 8px;
+// Função para pegar o usuario do GitHub
+function ProfileSidebar(){
+  const githubUser = 'Lucas-Matta';
 
-`;
-
-const MainGrid = styled.main`
-    display: grid;
-    grid-gap: 10px;
-    padding: 16px;
-
-    @media(min-width: 860px){
-      grid-template-areas: "profileArea welcomeArea profileRelationsArea";
-      grid-template-columns: 160px 1fr 312px;
-    }
-`;
+  return(
+    <Box>
+        <img style={{ borderRadius: '8px' }} src={`https://github.com/${githubUser}.png`} />
+    </Box>
+  )
+}
 
 export default function Home() {
+
   return(
     <MainGrid>
-      <div style={{ gridArea: 'profileArea' }}>
-          <Box>
-              imagem
-          </Box>
+      <div className="profileArea" style={{ gridArea: 'profileArea' }}>
+        <ProfileSidebar />
       </div>
-      <div style={{ gridArea: 'welcomeArea' }} >
+      <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }} >
           <Box>
               Bem Vindo
           </Box>
       </div>
-      <div style={{ gridArea: 'profileRelationsArea' }}>
+      <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
           <Box>
               Pessoas da Comunidade
+          </Box>
+          <Box>
+              Comunidades
           </Box>
       </div>
     </MainGrid>

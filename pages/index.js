@@ -1,15 +1,25 @@
 import MainGrid from '../src/components/MainGrid';
 import Box from '../src/components/Box';
 
-import { AlurakutMenu, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
+import { AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet } from '../src/lib/AlurakutCommons';
 import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
 
-// Função para pegar o usuario do GitHub
+// Função para pegar a foto do o usuario do GitHub
 function ProfileSidebar(props){
-
   return(
     <Box>
         <img style={{ borderRadius: '8px' }} src={`https://github.com/${props.githubUser}.png`} />
+        <hr />
+
+        <p> 
+          <a className="boxLink" href={`https://github.com/${props.githubUser}`}>
+            @{props.githubUser}
+          </a>
+        </p>
+
+        <hr/>
+
+        <AlurakutProfileSidebarMenuDefault/>
     </Box>
   )
 }
@@ -32,6 +42,9 @@ export default function Home() {
                 </h1>
 
                 <OrkutNostalgicIconSet />
+            </Box>
+            <Box>
+              
             </Box>
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>

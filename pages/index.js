@@ -10,7 +10,7 @@ import { ProfileRelationsBoxWrapper } from '../src/components/ProfileRelations';
 // Função para pegar a foto do o usuario do GitHub
 function ProfileSidebar(props){
   return(
-    <Box>
+    <Box as="aside">
         <img style={{ borderRadius: '8px' }} src={`https://github.com/${props.githubUser}.png`} />
         <hr />
 
@@ -31,13 +31,14 @@ export default function Home() {
   const githubUser = 'Lucas-Matta';
   const pessoasFavoritas = ['juunegreiros', 'omariosouto', 'peas', 'rafaballerini', 'marcobrunodev'];
   const [comunidades, setComunidades] = useState([{
+        id: '32146541351534155432',
         title: 'Eu odeio acordar cedo',
         image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
   }]);
 
   return(
     <>
-      <AlurakutMenu />
+      <AlurakutMenu githubUser={githubUser} />
       <MainGrid>
         <div className="profileArea" style={{ gridArea: 'profileArea' }}>
           <ProfileSidebar githubUser={githubUser} />
@@ -56,7 +57,8 @@ export default function Home() {
                       const dadosDoForm = new FormData(e.target);
 
                       const comunidade = {
-                        titulo: dadosDoForm.get('title'),
+                        id: new Date().toISOString(),
+                        title: dadosDoForm.get('title'),
                         image: dadosDoForm.get('image'),
                       }
 
@@ -74,7 +76,7 @@ export default function Home() {
 
                     <div>
                         <input placeholder="Coloque uma URL para usarmos como capa"
-                                name="title"
+                                name="image"
                                 aria-label="Coloque uma URL para usarmos como capa"
                                 type="text"
                           />
@@ -88,13 +90,17 @@ export default function Home() {
         </div>
         <div className="profileRelationsArea" style={{ gridArea: 'profileRelationsArea' }}>
             <ProfileRelationsBoxWrapper>
+                <h2 className="smallTitle">
+                  Comunidades {(comunidades.length)}
+                </h2>
+            
                 <ul>
                     {comunidades.map((itemAtual) => {
                       return(
-                        <li key={itemAtual} >
-                            <a href={`/users/${itemAtual.title}`} key={itemAtual.title}>
+                        <li  key={itemAtual.id} >
+                            <a href={`/users/${itemAtual.title}`}>
                                 <img src={itemAtual.image} />
-                                <span>{githubUser}</span>
+                                <span>{itemAtual.title}</span>
                             </a>
                         </li>
                       )
@@ -110,7 +116,7 @@ export default function Home() {
                     {pessoasFavoritas.map((githubUser) => {
                       return(
                         <li key={githubUser}>
-                            <a href={`/users/${githubUser}`} key={githubUser}>
+                            <a href={`/users/${githubUser}`}>
                                 <img src={`https://github.com/${githubUser}.png`} />
                                 <span>{githubUser}</span>
                             </a>

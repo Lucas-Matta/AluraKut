@@ -91,4 +91,19 @@ OBS: e.preventDefault(), seria uma função JavaScript para que quando o usuári
 E para finalizar a segunda aula, como resultado final temos o seguinte layout;
 
    ![image](https://user-images.githubusercontent.com/67201210/125728684-66f70f2b-7a86-43af-b356-0342f5b46a5f.png)
+   
+***
+
+### 💡 Detalhes da Terceira Aula
+
+Iniciando a terceira aula já direto com a mão na massa! Entendemos um pouco mais sobre o funcionamento dos protocolos HTTP e requisições para utilizarmos a API do github diretamente no projeto da AluraKut.
+
+1. Agora vamos colocar os nossos seguidores do GitHub como seguidores também do nosso Alurakut, e para isso vamos utilizar a API do GitHub utilizando o famoso 'fetch' do JavaScript para pegar as informações necessárias do GitHub que queremos que apareça no nosso Alurakut. Caso a nossa requisição para nossa API usando o fetch der certo, vamos usar o .then do próprio JavaScript que retorna uma promise. Após ele retornar a resposta do servidor, essa resposta vai vir em formato JSON, para converte-lá para um objeto JavaScript vamos utilizar novamente o .then, que nesse caso vai significar que se a primeira requisição chegou completa, vai passar por uma segunda requisição para ser convertida em um objeto JavaScript para conseguirmos setar ela na nossa useState.
+
+Porém se fizermos isso sem "supervisão" ou sem deixa-lá assincrona com o React, ela vai ficar fazendo essa requisição do fetch infinitamente entrando em Loop e não queremos que isso aconteça, então vamos utilizar uma Hook nativa do React para ficar monitorando, caso essa requisição seja alterada e garantir que ela só será executada apenas se tiver algum tipo alteração do contrário será executada apenas uma única vez.
+
+Sem utilizar o useEffect (ERRADO)          |  Utilizando com o useEffect (CORRETO)
+:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/67201210/125872279-a6819e8b-8d1a-4b86-b082-8bfc93798e23.png)  |  ![image](https://user-images.githubusercontent.com/67201210/125872184-b5eab59d-a4ee-4d41-a64d-3028edfcb223.png)
+
 

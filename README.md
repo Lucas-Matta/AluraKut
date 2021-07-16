@@ -106,4 +106,12 @@ Sem utilizar o useEffect (ERRADO)          |  Utilizando com o useEffect (CORRET
 :-------------------------:|:-------------------------:
 ![image](https://user-images.githubusercontent.com/67201210/125872279-a6819e8b-8d1a-4b86-b082-8bfc93798e23.png)  |  ![image](https://user-images.githubusercontent.com/67201210/125872184-b5eab59d-a4ee-4d41-a64d-3028edfcb223.png)
 
+2. Logo após isso, vamos ajustar um lugar no nosso layout para colocar os nossos seguidores. Para isso iremos reaproveitar o nosso component ProfileRelationsBoxWrapper, importando anteriormente para colocar nossas comunidades, porém agora vamos transformar esse component em uma function para utilizar fora da nossa function Home e ter mais controle sobre ela, passando as props (propriedades) através do novo component que foi criado dentro dessa função. E não podemos esquecer também da nossa useState Seguidores que criamos também.
+
+    <p align="center"><img src='https://user-images.githubusercontent.com/67201210/125872837-1e2e2098-b77c-4c26-b3f6-b7579042045d.png'/></p>
+    <p align="center"><img src='https://user-images.githubusercontent.com/67201210/125872853-12689559-3e6d-454a-a792-68dee541dfa2.png'/></p>
+    <p align="center"><img src='https://user-images.githubusercontent.com/67201210/125872865-fa32c56f-34de-48ec-a57f-3cb405456e75.png'/></p>
+
+E por fim uma breve introdução ao DatoCMS que vamos utilizar nas próximas aulas, que será o nosso gerenciador de componentes que vamos utilizar para caso quisermos alterar alguma parte do nosso layout e também ser o nosso back-end desse projeto do Alurakut.
+
 

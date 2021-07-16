@@ -60,7 +60,6 @@ export default function Home() {
       setSeguidores(respostaCompleta);
     })
 
-
   }, [])
 
   return(
@@ -104,6 +103,7 @@ export default function Home() {
                                aria-label="Qual o nome da sua comunidade?"
                                name="title"
                                type="text"
+                               required
                           />
                     </div>
 
@@ -111,7 +111,8 @@ export default function Home() {
                         <input placeholder="Coloque uma URL para usarmos como capa"
                                aria-label="Coloque uma URL para usarmos como capa"
                                name="image"
-                              type="text"
+                               type="text"
+                               required
                           />
                     </div>
 

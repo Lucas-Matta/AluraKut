@@ -34,6 +34,13 @@ function ProfileRelationsBox(props){
         <h2 className="smallTitle">
           {props.title} ({props.items.length})
         </h2>
+        <ul>
+          {props.items.map(() => {
+            <li>
+              <img src={`avatar_url`} />
+            </li>
+          })}
+        </ul>
     </ProfileRelationsBoxWrapper>
   )
 }
@@ -46,7 +53,8 @@ export default function Home() {
         title: 'Eu odeio acordar cedo',
         image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
   }]);
-  const [seguidores, setSeguidores] = useState([]);
+  
+  const [seguidores, setSeguidores] = useState([{}]);
 
   useEffect(() => {
     fetch('https://api.github.com/users/Lucas-Matta/followers')
@@ -58,6 +66,24 @@ export default function Home() {
     // Vai converter para Objeto JavaScript
     .then((respostaCompleta) => {
       setSeguidores(respostaCompleta);
+      console.log(seguidores);
+    })
+
+    // API GraphQL
+    fetch('https://graphql.datocms.com/', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'ed3aab91a79f33f54dc9044ef6d072',
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({ "query": `query {
+        allCommunities {
+          title
+          id
+          imageUrl
+        }
+      }` })
     })
 
   }, [])
@@ -72,7 +98,7 @@ export default function Home() {
         <div className="welcomeArea" style={{ gridArea: 'welcomeArea' }} >
             <Box>
                 <h1 className="title">
-                    Bem Vindo(a)
+                    Bem Vindo(a) {githubUser}
                 </h1>
 
                 <OrkutNostalgicIconSet />
@@ -153,7 +179,7 @@ export default function Home() {
                     {pessoasFavoritas.map((githubUser) => {
                         return(
                           <li key={githubUser}>
-                              <a href={`/users/${githubUser}`}>
+                              <a href={`${githubUser}`}>
                                   <img src={`https://github.com/${githubUser}.png`} />
                                   <span>{githubUser}</span>
                               </a>

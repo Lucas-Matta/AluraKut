@@ -140,7 +140,7 @@ Apos isso, vamos utilizar o .then para retornar o nosso response em .json. Logo 
     
 E tambem precisamos alterar la na nossa API que esta sendo utilizada de servidor e pegar a requisição que esta vindo do nosso formulario para o cadastramento no nosso banco de dados do DatoCMS. Para isso iremos utilizar o Spread Operator tambem do JavaScript.
 
-    <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126073623-582cf395-6362-4881-86b1-5951029848fc.png'/></p>
+   <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126073623-582cf395-6362-4881-86b1-5951029848fc.png'/></p>
 
 
 

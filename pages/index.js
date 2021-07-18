@@ -48,11 +48,7 @@ function ProfileRelationsBox(props){
 export default function Home() {
   const githubUser = 'Lucas-Matta';
   const pessoasFavoritas = ['juunegreiros', 'omariosouto', 'peas', 'rafaballerini', 'marcobrunodev'];
-  const [comunidades, setComunidades] = useState([{
-        id: '32146541351534155432',
-        title: 'Eu odeio acordar cedo',
-        image: 'https://alurakut.vercel.app/capa-comunidade-01.jpg'
-  }]);
+  const [comunidades, setComunidades] = useState([]);
   
   const [seguidores, setSeguidores] = useState([{}]);
 
@@ -82,8 +78,16 @@ export default function Home() {
           title
           id
           imageUrl
+          creatorSlug
         }
       }` })
+    })
+
+    .then((resp) => resp.json()) // Pega o retorno do response.json() e ja retorna
+    .then((resp) => {
+        const comunidadesDato = resp.data.allCommunities;
+
+        setComunidades(comunidadesDato);
     })
 
   }, [])
@@ -161,8 +165,8 @@ export default function Home() {
                     {comunidades.map((itemAtual) => {
                       return(
                         <li  key={itemAtual.id} >
-                            <a href={`/users/${itemAtual.title}`}>
-                                <img src={itemAtual.image} />
+                            <a href={`/communities/${itemAtual.id}`}>
+                                <img src={itemAtual.imageUrl} />
                                 <span>{itemAtual.title}</span>
                             </a>
                         </li>

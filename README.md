@@ -131,7 +131,7 @@ Apos isso, vamos utilizar o .then para retornar o nosso response em .json. Logo 
 
 3. Porem o Token que estamos utilizando para cosneguir pegar as informações do DatoCMS, esta aparecendo para o usuario final, quando inspeciona a pagina do navegador. Para corrigir esse problema e termos segurança dos nossos Tokens, iremos utilizar o conceito de BFF ( Back end For Front End ) quue simplificando, seria um 'mini banco de dados' do Front End, onde iremos guardar esse nosso Token, para ele não aparecer para o usuario final. Iremos instalar o client do DatoCMS ( Esta na documentação do DatoCMS ) e criar o nosso BFF.
 
-                                                      yarn add datocms-client
+                                               yarn add datocms-client
     <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126071882-72a74abd-8fec-4e8f-bf6d-37e40483ad51.png'/></p>
  
  4. Agora precisamos quando criarmos uma comunidade, utilizar a nossa API que criamos, que funciona como se fosse o nosso servidor do back end integrado com o DatoCMS. Para isso vamos voltar no nosso formulario de cadastro de comunidades e mandar as informações que pegamos do formulario diretamente para o nosso servidor utilizando o fetch novamente. Configuramos o fetch como method POST pois esta mandando e montamos a nossa estrutura. Apos isso vamos utilizar o .then com o async await, para ele esperar a requisição que foi feita no nosso servidor. Ai basta pegarmos o registro que foi criado na nossa API e atualizarmos as nossas states.

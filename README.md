@@ -15,7 +15,7 @@ O Alurakut é um aplicativo desenvolvido na semana da Imersão React 3A edição
 
 ***
 
-### 💡 Detalhes da Primeira Aula
+### <p align="center">💡 Detalhes da Primeira Aula</p>
 
 Na primeira aula, já começamos vendo um pouco de teoria sobre o React components e styled-components que vão ser as tecnologias necessárias para dar vida ao projeto. Também entendemos como o React se tornou tão popular no mercado de tecnologia e como iniciar o processo de aprendizagem da ferramente.
 
@@ -43,7 +43,7 @@ Component Box, vai ser os divisores principais do Alurakut que vai fazer a separ
    
 ***
 
-### 💡 Detalhes da Segunda Aula
+### <p align="center">💡 Detalhes da Segunda Aula</p>
 
 Iniciando então a segunda aula, já vendo como lidar com as states do React no aplicativo e entender melhor o funcionamento de uma SPA ( Single Page Aplication ), além também de dar mais vida para o perfil do Alurakut.
 
@@ -94,7 +94,7 @@ E para finalizar a segunda aula, como resultado final temos o seguinte layout;
    
 ***
 
-### 💡 Detalhes da Terceira Aula
+### <p align="center">💡 Detalhes da Terceira Aula</p>
 
 Iniciando a terceira aula já direto com a mão na massa! Entendemos um pouco mais sobre o funcionamento dos protocolos HTTP e requisições para utilizarmos a API do github diretamente no projeto da AluraKut.
 
@@ -115,7 +115,7 @@ Sem utilizar o useEffect (ERRADO)          |  Utilizando com o useEffect (CORRET
 E por fim uma breve introdução ao DatoCMS que vamos utilizar nas próximas aulas, que será o nosso gerenciador de componentes que vamos utilizar para caso quisermos alterar alguma parte do nosso layout e também ser o nosso back-end desse projeto do Alurakut.
 
 
-### 💡 Detalhes da Quarta Aula
+### <p align="center">💡 Detalhes da Quarta Aula</p>
 
 Iniciamos ja entendendo como iria funcionar o DatoCMS na nossa aplicação, e um pouco mais tambem sobre GraphQL para cosnumir os nossos dados e salvar os dados no DatoCMS que sera nosso Back end dessa aplicação. 
 

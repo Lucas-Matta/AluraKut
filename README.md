@@ -119,26 +119,26 @@ E por fim uma breve introdução ao DatoCMS que vamos utilizar nas próximas aul
 
 Iniciamos ja entendendo como iria funcionar o DatoCMS na nossa aplicação, e um pouco mais tambem sobre GraphQL para cosnumir os nossos dados e salvar os dados no DatoCMS que sera nosso Back end dessa aplicação. 
 
-1. Então inicinado a aula ja criamos uma conta no DatoCMS para gerenciar nosso Back end, e criamos tambem nossa Community que sera o banco respoonsavel por guardar nossas comunidades que vão ser criadas pelo usuario. Dentro da Community, configuramos nossa estrutura para consumir na nossa aplicação do ALurakut.
+1. Então inicinado a aula ja criamos uma conta no DatoCMS para gerenciar nosso Back end, e criamos tambem nossa Community que será o banco respoonsável por guardar nossas comunidades que vão ser criadas pelo usuário. Dentro da Community, configuramos nossa estrutura para consumir na nossa aplicação do ALurakut.
 
     <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126071364-ecf7a69e-7a4c-42e8-906e-f7cd2fa26601.png'/></p>
 
-2. Agora precisamos consumir essa API na nossa aplicação para conseguir deixar os dados dinamicos e conseguir salvar diretamente no nosso Back End. Para isso vamos utilizar novamente o fetch do JavaScript, dentro do nosso useEffect, para ele chamar nossa API toda vez que recarregar a pagina e usando a documentação do DatoCMS, vamos passar os parametros necessarios para puxar do banco os dados que precisaremos na nossa aplicação
+2. Agora precisamos consumir essa API na nossa aplicação para conseguir deixar os dados dinamicos e conseguir salvar diretamente no nosso Back End. Para isso vamos utilizar novamente o fetch do JavaScript, dentro do nosso useEffect, para ele chamar nossa API toda vez que recarregar a página e usando a documentação do DatoCMS, vamos passar os parametros necessários para puxar do banco os dados que precisaremos na nossa aplicação
 
     <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126071552-9e36f8a8-935d-4d7c-a9ac-63fbef6aa354.png'/></p>
    
-Apos isso, vamos utilizar o .then para retornar o nosso response em .json. Logo apos isso vamos criar uma nova constante, que sera as comunidades que fizemos as requisições la do DatoCMS e setar nas nossas comunidades atual, utilizando o setComunidades.
+Apos isso, vamos utilizar o comando .then para retornar o nosso response em .json. Logo apos isso vamos criar uma nova constante, que será as comunidades que fizemos as requisições la do DatoCMS e setar nas nossas comunidades atual, utilizando o setComunidades.
 
-3. Porem o Token que estamos utilizando para cosneguir pegar as informações do DatoCMS, esta aparecendo para o usuario final, quando inspeciona a pagina do navegador. Para corrigir esse problema e termos segurança dos nossos Tokens, iremos utilizar o conceito de BFF ( Back end For Front End ) quue simplificando, seria um 'mini banco de dados' do Front End, onde iremos guardar esse nosso Token, para ele não aparecer para o usuario final. Iremos instalar o client do DatoCMS ( Esta na documentação do DatoCMS ) e criar o nosso BFF.
+3. Porém o Token que estamos utilizando para cosneguir pegar as informações do DatoCMS, está aparecendo para o usuário final, quando inspeciona a página do navegador. Para corrigir esse problema e termos segurança dos nossos Tokens, iremos utilizar o conceito de BFF ( Back end For Front End ) quue simplificando, seria um 'mini banco de dados' do Front End, onde iremos guardar esse nosso Token, para ele não aparecer para o usuário final. Iremos instalar o client do DatoCMS ( Está na documentação do DatoCMS ) e criar o nosso BFF.
 
         yarn add datocms-client
     <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126071882-72a74abd-8fec-4e8f-bf6d-37e40483ad51.png'/></p>
  
- 4. Agora precisamos quando criarmos uma comunidade, utilizar a nossa API que criamos, que funciona como se fosse o nosso servidor do back end integrado com o DatoCMS. Para isso vamos voltar no nosso formulario de cadastro de comunidades e mandar as informações que pegamos do formulario diretamente para o nosso servidor utilizando o fetch novamente. Configuramos o fetch como method POST pois esta mandando e montamos a nossa estrutura. Apos isso vamos utilizar o .then com o async await, para ele esperar a requisição que foi feita no nosso servidor. Ai basta pegarmos o registro que foi criado na nossa API e atualizarmos as nossas states.
+ 4. Agora precisamos quando criarmos uma comunidade, utilizar a nossa API que criamos, que funciona como se fosse o nosso servidor do back end integrado com o DatoCMS. Para isso vamos voltar no nosso formulário de cadastro de comunidades e mandar as informações que pegamos do formulário diretamente para o nosso servidor utilizando o fetch novamente. Configuramos o fetch como method POST pois esta mandando e montamos a nossa estrutura. Após isso vamos utilizar o .then com o async await, para ele esperar a requisição que foi feita no nosso servidor. Ai basta pegarmos o registro que foi criado na nossa API e atualizarmos as nossas states.
 
     <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126073531-6e3a1851-1e4e-4e92-a335-3c3894d86607.png'/></p>
     
-E tambem precisamos alterar la na nossa API que esta sendo utilizada de servidor e pegar a requisição que esta vindo do nosso formulario para o cadastramento no nosso banco de dados do DatoCMS. Para isso iremos utilizar o Spread Operator tambem do JavaScript.
+E tambem precisamos alterar la na nossa API que esta sendo utilizada de servidor e pegar a requisição que está vindo do nosso formulário para o cadastramento no nosso banco de dados do DatoCMS. Para isso iremos utilizar o Spread Operator tambem do JavaScript.
 
    <p align="center"><img src='https://user-images.githubusercontent.com/67201210/126073623-582cf395-6362-4881-86b1-5951029848fc.png'/></p>
 

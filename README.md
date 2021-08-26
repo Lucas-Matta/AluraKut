@@ -6,7 +6,7 @@ O Alurakut é um aplicativo desenvolvido na semana da Imersão React 3A edição
 
 ***
 
-### 💻 Tecnologias Utilizadas até o momento
+### 💻 Tecnologias Utilizadas no projeto
 
 * React
 * NextJS
